@@ -6,11 +6,14 @@ import UseCases from './components/UseCases';
 import Pricing from './components/Pricing';
 import CallToAction from './components/CallToAction';
 import Footer from './components/Footer';
+import { useTheme } from './hooks/useTheme';
 
 function App() {
+    const { theme, toggleTheme } = useTheme();
+
     return (
         <div className="app">
-            <Navbar />
+            <Navbar theme={theme} toggleTheme={toggleTheme} />
             <main>
                 <Hero />
                 <SocialProof />
