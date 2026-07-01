@@ -8,11 +8,14 @@ import CallToAction from './components/CallToAction';
 import Footer from './components/Footer';
 import FAQ from './components/FAQ';
 import CookieConsent from './components/CookieConsent';
+import { useTheme } from './hooks/useTheme';
 
 function App() {
+    const { theme, toggleTheme } = useTheme();
+
     return (
         <div className="app">
-            <Navbar />
+            <Navbar theme={theme} toggleTheme={toggleTheme} />
             <main>
                 <Hero />
                 <SocialProof />
